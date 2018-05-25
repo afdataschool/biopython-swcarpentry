@@ -15,6 +15,7 @@ keypoints:
 - "Python is case-sensitive."
 - "Use meaningful variable names."
 - "Variables can be used in calculations."
+- "Variable assignment creates a new variable."
 - "Mutability matters!"
 ---
 
