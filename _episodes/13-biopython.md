@@ -22,13 +22,11 @@ like BLAST, ClustalW, FASTA, GenBank, PubMed ExPASy, SwissProt, and many more. B
 modules to connect to popular on-line services like NCBI's Blast, Entrez and PubMed or ExPASy's Swiss-Prot,
 UniProt and Prosite.
 
-## Installing Biopython in Jupyter
+## Biopython on Pearcey
 
-1. Click on the `Conda` tab
-2. Type "biopython" into the search box
-3. Select the checkbox for biopython
-4. Hit the arrow button to install
-5. Wait
+1. Start an interative Pearcey session.
+2. The command `ipynb` is a script for managing your notebook servers on Pearcey.
+3. Biopython should already be installed.
 
 ## Loading the Biopython library
 
@@ -36,11 +34,21 @@ Open a new notebook for this.
 
 ~~~
 import Bio
-print(Bio.__version__)
 ~~~
 {: python}
 
+> ## Version
+> What version of Biopython do you have installed?
+{: .challenge}
 
+~~~
+from Bio.Seq import Seq
+my_seq = Seq("AGTACACTGGT")
+my_seq
+
+print(my_seq)
+~~~
+{: .python}
 ## Parse a GenBank file
 
 ~~~
