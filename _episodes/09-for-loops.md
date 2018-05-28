@@ -1,9 +1,9 @@
 ---
 title: "For Loops"
 teaching: 10
-exercises: 10
+exercises: 30
 questions:
-- "How can I make a program do many things?"
+- "How can I make a program do something repeatedly?"
 objectives:
 - "Explain what for loops are normally used for."
 - "Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration."
@@ -17,178 +17,59 @@ keypoints:
 - "Use `range` to iterate over a sequence of numbers."
 - "The Accumulator pattern turns many values into one."
 ---
-## A *for loop* executes commands once for each value in a collection.
-
-*   Doing calculations on the values in a list one by one
-    is as painful as working with `pressure_001`, `pressure_002`, etc.
-*   A *for loop* tells Python to execute some statements once for each value in a list,
-    a character string,
-    or some other collection.
-*   "for each thing in this group, do these operations"
-
-~~~
-for number in [2, 3, 5]:
-    print(number)
-~~~
-{: .python}
-
-*   This `for` loop is equivalent to:
-
-~~~
-print(2)
-print(3)
-print(5)
-~~~
-{: .python}
-
-*   And the `for` loop's output is:
-
-~~~
-2
-3
-5
-~~~
-{: .output}
-
-## The first line of the `for` loop must end with a colon, and the body must be indented.
-
-*   The colon at the end of the first line signals the start of a *block* of statements.
-*   Python uses indentation rather than `{}` or `begin`/`end` to show *nesting*.
-    *   Any consistent indentation is legal, but almost everyone uses four spaces.
-
-~~~
-for number in [2, 3, 5]:
-print(number)
-~~~
-{: .python}
-~~~
-IndentationError: expected an indented block
-~~~
-{: .error}
-
-## A `for` loop is made up of a collection, a loop variable, and a body.
-
-~~~
-for number in [2, 3, 5]:
-    print(number)
-~~~
-{: .python}
-
-*   The collection, `[2, 3, 5]`, is what the loop is being run on.
-*   The body, `print(number)`, specifies what to do for each value in the collection.
-*   The loop variable, `number`, is what changes for each *iteration* of the loop.
-    *   The "current thing".
-
-## Loop variables can be called anything.
-
-*   As with all variables, loop variables are:
-    *   Created on demand.
-    *   Meaningless: their names can be anything at all.
-
-~~~
-for kitten in [2, 3, 5]:
-    print(kitten)
-~~~
-{: .python}
-
-## The body of a loop can contain many statements.
-
-*   But no loop should be more than a few lines long.
-*   Hard for human beings to keep larger chunks of code in mind.
-
-~~~
-primes = [2, 3, 5]
-for p in primes:
-    squared = p ** 2
-    cubed = p ** 3
-    print(p, squared, cubed)
-~~~
-{: .python}
-~~~
-2 4 8
-3 9 27
-5 25 125
-~~~
-{: .output}
-
-## Use `range` to iterate over a sequence of numbers.
-
-*   The built-in function `range` produces a sequence of numbers.
-    *   *Not* a list: the numbers are produced on demand
-        to make looping over large ranges more efficient.
-*   `range(N)` is the numbers 0..N-1
-    *   Exactly the legal indices of a list or character string of length N
-
-~~~
-print('a range is not a list: range(0, 3)')
-for number in range(0,3):
-    print(number)
-~~~
-{: .python}
-~~~
-a range is not a list: range(0, 3)
-0
-1
-2
-~~~
-{: .output}
-
-## The Accumulator pattern turns many values into one.
-
-*   A common pattern in programs is to:
-    1.  Initialize an *accumulator* variable to zero, the empty string, or the empty list.
-    2.  Update the variable with values from a collection.
-
-~~~
-# Sum the first 10 integers.
-total = 0
-for number in range(10):
-   total = total + (number + 1)
-print(total)
-~~~
-{: .python}
-~~~
-55
-~~~
-{: .output}
-
-*   Read `total = total + (number + 1)` as:
-    *   Add 1 to the current value of the loop variable `number`.
-    *   Add that to the current value of the accumulator variable `total`.
-    *   Assign that to `total`, replacing the current value.
-*   We have to add `number + 1` because `range` produces 0..9, not 1..10.
-
-> ## Classifying Errors
->
-> Is an indentation error a syntax error or a runtime error?
+> ## For loop structure:
+> Label the parts (variable, collection, body) of this for loop: 
+> ~~~ 
+> for i in [2, 3, 5]:
+>    print(i)
+> ~~~
+> {: .python}
 {: .challenge}
 
-> ## Tracing Execution
->
-> Create a table showing the numbers of the lines that are executed when this program runs,
-> and the values of the variables after each line is executed.
->
+> ## Variable names:
+> Will this work?
 > ~~~
+> for kitten in [2, 3, 5]:
+>    print(kitten)
+> ~~~
+> {: .python}
+{: .challenge}
+
+> ## Multiple expressions:
+> ~~~
+> primes = [2, 3, 5]
+> ~~~
+> {: .python}
+> Write a for loop iterates over primes to produce:
+> ~~~
+> 2 4 8
+> 3 9 27
+> 5 25 125
+> ~~~
+> {: .output}
+> 
+{: .challenge}
+
+> ## Accumulator patterns
+> 
+> *   A common pattern in programs is to:
+>     1.  Initialize an *accumulator* variable to zero, the empty string, or the empty list.
+>     2.  Update the variable with values from a collection using loop.
+> 
+> ~~~
+> # Sum the first 10 integers.
 > total = 0
-> for char in "tin":
->     total = total + 1
+> for number in range(10):
+>    total = total + (number + 1)
+> print(total)
 > ~~~
 > {: .python}
-{: .challenge}
-
-> ## Reversing a String
->
-> Fill in the blanks in the program below so that it prints "nit"
-> (the reverse of the original character string "tin").
->
+> Output:
 > ~~~
-> original = "tin"
-> result = ____
-> for char in original:
->     result = ____
-> print(result)
+> 55
 > ~~~
-> {: .python}
+> {: .output}
+> Write out a table of execution line number and the value of `total` at each step for this program
 {: .challenge}
 
 > ## Practice Accumulating
@@ -231,33 +112,45 @@ print(total)
 > {: .python}
 {: .challenge}
 
-> ## Cumulative Sum
+
+> ## Accumulator challenge 
+> Use an accumulator pattern and a for loop to make a list of the first 10 fibonacci numbers.
 >
-> Reorder and properly indent the lines of code below
-> so that they print an array with the cumulative sum of data.
-> The result should be `[1, 3, 5, 10]`.
+> Hint: you will need to initialise two different kinds of variables before your for loop.
+{: .challenge}
+
+> ## Range
+> ~~~
+> my_collection = range(100)
+> ~~~
+> {: .python}
+> 1. What is the type of `my_collection`?
+> 2. Write a for loop that outputs the sum of all numbers 0 to 99.
+> 3. Convert my_collection into a list.
+> 4. Try the following:
 >
 > ~~~
-> cumulative += [sum]
-> for number in data:
-> cumulative = []
-> sum += number
-> print(cumulative)
-> data = [1,2,2,5]
+> big_number = 100000000
+> for i in range(big_number):
+>     pass
+> for i in list(range(big_number):
+>     pass
 > ~~~
 > {: .python}
 {: .challenge}
 
-> ## Indentation Errors
+> ## Reversing a String
 >
-> What kind of error does Python report
-> when we try to run the following program?
+> Fill in the blanks in the program below so that it prints "nit"
+> (the reverse of the original character string "tin").
 >
 > ~~~
-> for char in 'helium':
-> print char
+> original = "tin"
+> result = ____
+> for char in original:
+>     result = ____
+> print(result)
 > ~~~
 > {: .python}
->
-> Is this a syntax error or a runtime error?
 {: .challenge}
+

@@ -1,17 +1,18 @@
 ---
 layout: lesson
 ---
-This lesson is an introduction to programming Python, using [Biopython](http://biopython.org/wiki/Biopython) applications as motivation.
-It is designed to be used in [Software Carpentry](https://software-carpentry.org) workshops. Like most Software Carpentry
-Python lessons, it references Jupyter Notebooks, but can be taught using a regular Python interpreter as well.
+This lesson provides an exercise-based consolidation of Python, and an introduction [Biopython](http://biopython.org/wiki/Biopython).
+It is based on the  [Software Carpentry](https://software-carpentry.org) workshop paradigm, and is intended to be taught together with the accompanying Jupyter Notebook.
 Please note that this lesson uses Python 3 rather than Python 2.
 
 > ## Prerequisites
 > Learners need to understand the concepts of files and directories
 > (including the working directory)
-> and how to start a Python interpreter
+> and how to start Jupyter Notebook
 > before starting this lesson.
+> They should also be familiar with the basic Python types (int, float, string
+> list, dictionary) and control structures (e.g. for loops, if else statements, while).
+> 
+> An introduction to classes is also assumed.
 >
-> Learners must install Python and download the gapminder data before class starts:
-> please see [the setup instructions]({{ site.github.url }}/setup/) for details.
 {: .prereq}
