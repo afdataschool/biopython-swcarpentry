@@ -133,7 +133,7 @@ keypoints:
 > big_number = 100000000
 > for i in range(big_number):
 >     pass
-> for i in list(range(big_number):
+> for i in list(range(big_number)):
 >     pass
 > ~~~
 > {: .python}
