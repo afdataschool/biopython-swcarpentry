@@ -67,8 +67,8 @@ print(my_seq)
 >
 > ~~~
 > from Bio.Alphabet import generic_dna
-> my_dna = Seq("atggggcgcgggaaggtgcagctgaagcggatcgagaacaagatcaaccggcaggtgacct", alphabet='generic_dna')
-> my_prot = Seq("MGRGKVQLKRIENKINRQVTFSKRRSGLLKKAHEISVLCDAEVG", alphabet = 'generic_protein')
+> my_dna = Seq("atggggcgcgggaaggtgcagctgaagcggatcgagaacaagatcaaccggcaggtgacct", alphabet=generic_dna)
+> my_prot = Seq("MGRGKVQLKRIENKINRQVTFSKRRSGLLKKAHEISVLCDAEVG", alphabet = generic_protein)
 > ~~~
 > {: .python}
 >
