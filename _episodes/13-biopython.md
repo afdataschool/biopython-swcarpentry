@@ -112,7 +112,7 @@ print('the total number of reads is:' counts)
 ~~~
 {: .python}
 
-## Writing files
+[writing files]
 
 > ## Iteraction practice
 > 1. Calculate the average GC content of reads in this file. HINT: look for built in attributes.
