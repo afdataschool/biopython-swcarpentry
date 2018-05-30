@@ -111,12 +111,10 @@ with gzip.open("/OSM/CBR/AF_DATASCHOOL/input/2018-05-03_canola/NB501086_0095_CHe
 print('the total number of reads is:' counts)
 ~~~
 {: .python}
-[FIXME - make a small file first]
 
 ## Writing files
-~~~
 
-> Iteration practice
+> ## Iteraction practice
 > 1. Calculate the average GC content of reads in this file. HINT: look for built in attributes.
 > 2. Calculate the average base quality in the file. (HARDER)
 {: .challenge}
