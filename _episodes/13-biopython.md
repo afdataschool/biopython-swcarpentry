@@ -112,7 +112,7 @@ print('the total number of reads is:' counts)
 ~~~
 {: .python}
 
-[writing files]
+fixme: writing files
 
 > ## Iteraction practice
 > 1. Calculate the average GC content of reads in this file. HINT: look for built in attributes.
@@ -120,10 +120,9 @@ print('the total number of reads is:' counts)
 {: .challenge}
 
 ## Parse a GenBank file
-
 ~~~
 from Bio import SeqIO
-records = SeqIO.parse('data/Streptomyces_coelicolor.gbk', 'genbank')
+records = SeqIO.parse('data/test.genbank', 'genbank')
 ~~~
 {: python}
 
@@ -133,11 +132,11 @@ You always need to tell `SeqIO.parse` what kind of filetype it is supposed to re
 It will not guess the type from the file extension.
 
 ~~~
-records = SeqIO.parse('data/Streptomyces_coelicolor.gbk')
+records = SeqIO.parse('data/test.genbank')
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-6-d92ec57b2f34> in <module>()
-----> 1 records = SeqIO.parse('data/Streptomyces_coelicolor.gbk')
+----> 1 records = SeqIO.parse('data/test.genbank')
 
 TypeError: parse() missing 1 required positional argument: 'format'
 ~~~
@@ -166,7 +165,7 @@ You have used generator functions before: `range()` is a generator function as w
 
 > ## Tip: If you need to iterate over your records multiple times, convert the generator to a list
 > ```python
-records = list(SeqIO.parse('data/Streptomyces_coelicolor.gbk', 'genbank'))
+records = list(SeqIO.parse('data/test.genbank', 'genbank'))
 ```
 {: .callout}
 
@@ -176,10 +175,10 @@ Every record has an `id`, a `name`, and a `description`, though they might be se
 Additionally, the `annotations` attribute contains a dictionary of further annotations.
 
 ~~~
-print(coelicolor.name)
-print(coelicolor.id)
-print(coelicolor.description)
-print(coelicolor.annotations)
+print(records.name)
+print(records.id)
+print(records.description)
+print(records.annotations)
 ~~~
 {: .python}
 ~~~
